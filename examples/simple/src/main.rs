@@ -1,9 +1,9 @@
 use serde::Serialize;
 use std::thread;
 use std::time;
-use websocket_event::server::Server;
-use websocket_event::Event;
-use websocket_event::SerializableEvent;
+use pushevent::server::Server;
+use pushevent::Event;
+use pushevent::SerializableEvent;
 
 /// Basic event struct which serializes with serde to json.
 #[derive(Serialize, Debug)]
