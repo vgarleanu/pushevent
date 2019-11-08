@@ -30,6 +30,7 @@ impl Handler for Client {
             .unwrap()
             .borrow_mut()
             .add_client(req.resource(), &self.sender);
+        self.resource = Some(req.resource().to_owned());
 
         Ok(Response::from_request(req)?)
     }
