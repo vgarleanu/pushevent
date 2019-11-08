@@ -96,4 +96,4 @@ without any additional terms or conditions.
 
 ## License
 
-PushEvent is licensed under the MIT License ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+PushEvent is licensed under the MIT License ([LICENSE.md](LICENSE.md) or http://opensource.org/licenses/MIT)
