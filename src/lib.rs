@@ -27,6 +27,7 @@ impl Event {
     ///
     /// # Example
     /// ```
+    /// use pushevent::{Event, SerializableEvent};
     /// struct Message;
     ///
     /// impl SerializableEvent for Message {
@@ -49,6 +50,7 @@ impl Event {
     /// useful.
     /// # Example
     /// ```
+    /// use pushevent::{Event, SerializableEvent};
     /// struct Message;
     ///
     /// impl SerializableEvent for Message {
@@ -69,6 +71,7 @@ impl Event {
     /// Serializes and returns the inner event/message.
     /// # Example
     /// ```
+    /// use pushevent::{Event, SerializableEvent};
     /// struct Message;
     ///
     /// impl SerializableEvent for Message {

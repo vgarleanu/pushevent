@@ -34,7 +34,8 @@ impl Server {
     /// server
     ///
     /// # Example
-    /// ```
+    /// ```no_run
+    /// use pushevent::server::Server;
     /// let server = Server::new("127.0.0.1:3012");
     /// ```
     pub fn new(addr: &'static str) -> Self {
@@ -72,7 +73,7 @@ impl Server {
     /// type.
     ///
     /// # Example
-    /// ```
+    /// ```compile_fail
     /// use std::thread;
     ///
     /// let server = Server::new("127.0.0.1:3012");
@@ -93,8 +94,9 @@ impl Server {
     /// It drains all threads from self.threads and tries to join them.
     ///
     /// # Example
-    /// ```
-    /// let server = Server::new("127.0.0.1:3012");
+    /// ```no_run
+    /// use pushevent::server::Server;
+    /// let mut server = Server::new("127.0.0.1:3012");
     /// server.join_threads();
     /// ```
     pub fn join_threads(&mut self) {
@@ -118,7 +120,7 @@ impl ServerInner {
     /// * `sender` - A Sender is a client that has connected to our server
     ///
     /// # Example
-    /// ```
+    /// ```compile_fail
     /// let inner = ServerInner::new();
     /// let sender = Sender {...};
     ///
@@ -141,7 +143,7 @@ impl ServerInner {
     /// * `sender` - A Sender is a client that has connected to our server
     ///
     /// # Example
-    /// ```
+    /// ```compile_fail
     /// let inner = ServerInner::new();
     /// let sender = Sender {...};
     ///
@@ -165,7 +167,7 @@ impl ServerInner {
     /// * `msg` - String which holds the message we wish to publish.
     ///
     /// # Example
-    /// ```
+    /// ```compile_fail
     /// let inner = ServerInner::new();
     /// inner.broadcast("/hello", "Hello World");
     /// ```
