@@ -3,6 +3,17 @@ name = "pushevent"
 version = "0.1.0"
 authors = ["Valerian G. <valerian.garleanu@pm.me>"]
 edition = "2018"
+description = "PushEvent is a simple event dispatch library built on top of ws-rs, that allows you to dispatch events to clients based on what resource they are subscribed to."
+documentation = "https://docs.rs/pushevent"
+repository = "https://gitlab.com/vgarleanu/pushevent"
+readme = "README.md"
+keywords = ["ws-rs", "pushevent"]
+categories = ["web-programming::websocket"]
+license = "MIT"
+license-file = "LICENSE.md"
+
+[badges]
+gitlab = { repository = "vgarleanu/pushevent", branch = "master" }
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
