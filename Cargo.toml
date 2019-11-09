@@ -1,6 +1,6 @@
 [package]
 name = "pushevent"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Valerian G. <valerian.garleanu@pm.me>"]
 edition = "2018"
 description = "PushEvent is a simple event dispatch library built on top of ws-rs, that allows you to dispatch events to clients based on what resource they are subscribed to."
