@@ -155,7 +155,7 @@ impl ServerInner {
     /// ```
     pub fn remove_client(&mut self, sender: &Sender) {
         for vec in self.clients.values_mut() {
-            vec.retain(|x| x.token() == sender.token())
+            vec.retain(|x| x.token() != sender.token())
         }
     }
 

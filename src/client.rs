@@ -24,7 +24,7 @@ impl Handler for Client {
     /// Methods called by ws-rs internally whenever a new request is made.
     /// The method locks our ServerRef and adds a new client with the resource requested by which
     /// we can filter later on.
-    fn on_request(&mut self, req: &Request) -> WsResult<(Response)> {
+    fn on_request(&mut self, req: &Request) -> WsResult<Response> {
         self.server
             .lock()
             .unwrap()
