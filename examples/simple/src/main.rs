@@ -1,9 +1,9 @@
-use serde::Serialize;
-use std::thread;
-use std::time;
 use pushevent::server::Server;
 use pushevent::Event;
 use pushevent::SerializableEvent;
+use serde::Serialize;
+use std::thread;
+use std::time;
 
 /// Basic event struct which serializes with serde to json.
 #[derive(Serialize, Debug)]
@@ -28,13 +28,13 @@ fn main() {
         // We create a new boxed instance of our SimplePushEvent struct with whatever message
         // inside.
         let msg = Box::new(SimplePushEvent {
-            message: String::from("Hello world"),
+            message: "Hello world".to_string(),
         });
 
         // The previous message event is encapsulated in our Event struct to which we supply two
         // arguments, the path/resource subscribers we would like to target ("/hello_world") and
         // our message event struct instance which implements SerializableEvent.
-        let event = Event::new("/hello_world", msg);
+        let event = Event::new("/hello_world".to_string(), msg);
 
         // The event is then sent over the tx channel provided by our server instance
         match tx.send(event) {

@@ -14,7 +14,7 @@ pub trait SerializableEvent: Sync + Send + 'static {
 /// [`Server::get_tx`](server::Server::get_tx).
 /// This struct encapsulates a inner trait object and res which is the resource we want to target.
 pub struct Event {
-    res: &'static str,
+    res: String,
     inner: Box<dyn SerializableEvent>,
 }
 
@@ -42,7 +42,7 @@ impl Event {
     /// assert_eq!(new_event.get_res(), String::from("/events/message"));
     /// assert_eq!(new_event.build(), String::from("Hello world"));
     /// ```
-    pub fn new(res: &'static str, inner: Box<dyn SerializableEvent>) -> Self {
+    pub fn new(res: String, inner: Box<dyn SerializableEvent>) -> Self {
         Self { res, inner }
     }
 
