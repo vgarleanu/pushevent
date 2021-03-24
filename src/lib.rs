@@ -24,7 +24,6 @@ pub trait SerializableEvent: Sync + Send + 'static {
 /// [`Server::get_tx`](server::Server::get_tx).
 /// This struct encapsulates a inner trait object and res which is the resource we want to target.
 pub struct Event {
-    res: String,
     inner: String,
 }
 
@@ -52,33 +51,10 @@ impl Event {
     /// assert_eq!(new_event.get_res(), String::from("/events/message"));
     /// assert_eq!(new_event.build(), String::from("Hello world"));
     /// ```
-    pub fn new<T: Into<String>>(res: T, inner: impl SerializableEvent) -> Self {
+    pub fn new<T: Into<String>>(inner: impl SerializableEvent) -> Self {
         Self {
-            res: res.into(),
             inner: inner.serialize(),
         }
-    }
-
-    /// Returns the resource path that this event targets. Usually used internally and rarely
-    /// useful.
-    /// # Example
-    /// ```
-    /// use pushevent::{Event, SerializableEvent};
-    /// struct Message;
-    ///
-    /// impl SerializableEvent for Message {
-    ///     fn serialize(&self) -> String {
-    ///         String::from("Hello world")
-    ///     }
-    /// }
-    ///
-    /// let message = Box::new(Message);
-    /// let new_event = Event::new("/events/message", message);
-    ///
-    /// assert_eq!(new_event.get_res(), String::from("/events/message"));
-    /// ```
-    pub fn get_res(&self) -> String {
-        self.res.to_owned()
     }
 
     /// Serializes and returns the inner event/message.
