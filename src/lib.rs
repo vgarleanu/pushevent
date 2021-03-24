@@ -105,6 +105,8 @@ impl Event {
 type Tx = UnboundedSender<Message>;
 type PeerMap = Arc<Mutex<HashMap<SocketAddr, Tx>>>;
 
+pub type EventTx = UnboundedSender<Event>;
+
 async fn handle_connection(peer_map: PeerMap, raw_stream: TcpStream, addr: SocketAddr) {
     let ws_stream = tokio_tungstenite::accept_async(raw_stream)
         .await
