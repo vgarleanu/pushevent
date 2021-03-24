@@ -51,7 +51,7 @@ impl Event {
     /// assert_eq!(new_event.get_res(), String::from("/events/message"));
     /// assert_eq!(new_event.build(), String::from("Hello world"));
     /// ```
-    pub fn new<T: Into<String>>(inner: impl SerializableEvent) -> Self {
+    pub fn new(inner: impl SerializableEvent) -> Self {
         Self {
             inner: inner.serialize(),
         }
